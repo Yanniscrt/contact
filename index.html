@@ -8,17 +8,16 @@
         .header {
             display: flex;
             align-items: center;
-            background-color: #000; /* Fond noir */
-            width: 100%; /* Prend toute la largeur */
-            flex-grow: 1; /* Flexible selon la taille de l'écran */
+            background-color: #000; 
+            width: 100%; 
+            flex-grow: 1;
             justify-content: center;
             height: 150px;
             border: none
         }
 
         .logo {
-            /* Styles pour ton logo */
-            margin-right: 10px; /* Ajoute un peu d'espace entre le logo et le titre */
+            margin-right: 10px;
         }
         @font-face {
             font-family: 'Montserrat';
@@ -28,8 +27,15 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #f0f0f0;
             color: #333;
-            margin: 0; /* Supprime les marges par défaut */
-            padding: 0; /* Supprime le padding par défaut */
+            margin: 0;
+            padding: 0; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ffffff;
         }
 
         h2 {
@@ -46,7 +52,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            max-width: 1400px; /* Définir la largeur maximale souhaitée */
+            max-width: 1400px;
 }
 
         .filter {
@@ -155,8 +161,8 @@
             color: white;
         }
         #liste_personnel {
-            max-width: 800px; /* Définir la largeur maximale souhaitée */
-            margin: 20px auto; /* Centre la zone de contenu horizontalement */
+            max-width: 800px;
+            margin: 20px auto; 
         }
 
     </style>
@@ -165,7 +171,7 @@
     <div class="header">
     <div class="logo">
         <a href="grafipolis.fr"><img id="logo" src="grafipolis.png" alt="Logo"></a>    </div>
-    <h2>Page Contact</h2>
+    <h1>Page Contact</h1>
 </div>
     <div class="filter-container">
         <div class="filter">
@@ -274,7 +280,6 @@
         ];
 
 
-        // Function to display personnel
         function displayPersonnel(personnelList) {
             var personnelContainer = document.getElementById('liste_personnel');
             personnelContainer.innerHTML = '';
@@ -291,7 +296,6 @@
             });
         }
 
-        // Function to filter personnel based on selected criteria
         function filterPersonnel() {
             var role = document.getElementById('role').value;
             var campus = document.getElementById('campus').value;
@@ -308,7 +312,6 @@
             displayPersonnel(filteredPersonnel);
         }
 
-        // Function to show modal with person's details
         function showModal(person) {
             var modal = document.getElementById('modal');
             var modalImage = document.getElementById('modalImage');
@@ -331,10 +334,8 @@
             };
         }
 
-        // Initial display of all personnel
         displayPersonnel(personnel);
 
-        // Event listeners for filter
         document.getElementById('role').addEventListener('change', filterPersonnel);
         document.getElementById('campus').addEventListener('change', filterPersonnel);
         document.getElementById('domaine').addEventListener('change', filterPersonnel);
